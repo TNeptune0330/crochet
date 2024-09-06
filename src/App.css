@@ -1,38 +1,311 @@
-.App {
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(0, 0%, 100%);
+
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: #ffc7c7;
+  color: var(--text-color);
+  
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  padding-top: 10px;
+  font-size: 7vh;
+  color: #645b6a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2{
+  padding: 0;
+  color: #2f3236;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.color{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.more{
+  font-size: 30px;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.purple{
+  background-color: purple;
+}
+
+.pink{
+  background-color: pink;
+}
+
+.cyan{
+  background-color: cyan;
+}
+
+.brown{
+  background-color: rgb(90, 65, 47);
+}
+
+.gray{
+  background-color: gray;
+}
+
+.black{
+  background-color: black;
+}
+
+.white{
+  height: 8;
+  width: 8;
+  outline: 2px solid;
+  outline-color: black;
+  background-color: white;
+}
+
+.tan{
+  background-color: tan;
+}
+
+.red{
+  background-color: red;
+}
+
+
+.orange{
+  background-color: orange;
+}
+
+.green{
+  background-color: green;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.header{
+  background-color: #e3a4a3;
+  height: 17vh;
+  outline: solid 1vh;;
+  outline-color:#645b6a;
+}
+
+.container {
+  display: grid;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  place-items: center;
+  margin-inline: 0rem;
+  padding-block: 0.25rem;
+  height: 240px;
 }
 
-.App-link {
-  color: #61dafb;
+.card__container {
+  display: grid;
+  
+  flex-direction: row;
+  row-gap: 3.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card__article {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 318px;
+  border-radius: 1.5rem;
+  border: solid 1vh #B17D82;
+}
+
+.card__img::before {
+  content: ''; /* Empty content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Match the border radius of the element */
+  box-shadow: 0 0 0 2px red; /* Outline effect */
+  pointer-events: none; /* Ensure it doesn’t interfere with user interaction */
+  z-index: -1; /* Place it behind the content of the element */
+}
+
+.card__data {
+  width: 280px;
+  background-color: #E9D1B9;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+}
+
+.card__price {
+  text-decoration: none;
+  font-size: large;
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card__price:hover {
+  text-decoration: underline;
+}
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
   }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
   to {
-    transform: rotate(360deg);
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 240px;
+    padding-top: 7vh;
+    padding-bottom: 2vh;
+    
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    height: 145px;
+    padding-inline: 2.5rem;
   }
 }
