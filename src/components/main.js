@@ -7,6 +7,9 @@ import Bracelet from './cards/bracelet.js';
 import Shrimp from './cards/shrimp.js';
 import Blob from './cards/rock.js';
 import Glove from './cards/glove.js';
+import Tophat from './cards/hat.js';
+import Cape from './cards/cape.js';
+import Sombrero from './cards/sombrero.js';
 
 function Main() {
   useEffect(() => {
@@ -38,16 +41,25 @@ function Main() {
           <Whale />
           <Mushroom />
           <Capybara />
-          <Bracelet />
           <Shrimp />
+          <Whale />
           <Blob />
           <Glove />
+          <Blob />
+          
         </div>
+        <h3>Items</h3>
         <div className="card__container">
-          <Whale />
+          <Blob />
+          <Glove />
           <Mushroom />
-          <Capybara />
           <Bracelet />
+        </div>
+        <h3>Accesories</h3>
+        <div className="card__container">
+            <Sombrero />
+            <Tophat />
+            <Cape />
         </div>
       </div>
     </div>

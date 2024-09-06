@@ -29,7 +29,9 @@ body {
   font-family: var(--body-font);
   background-color: #ffc7c7;
   color: var(--text-color);
+  scrollbar-color: #b17d82 #ffc7c7;
 }
+
 
 img {
   display: block;
@@ -95,6 +97,7 @@ h3{
   background-color: #e3a4a3;
   height: 17vh;
   outline: solid 1vh #645b6a;
+  margin-bottom: 4vh;
 }
 
 .container {
@@ -106,13 +109,8 @@ h3{
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent line breaks */
   gap: 1.5rem; /* Adjust gap between cards */
-  padding: 1rem; /* Adjust padding as needed */
-  margin-bottom: 2rem; /* Add space between rows */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-}
-
-.card__container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+  padding: 3rem; /* Adjust padding as needed */
+  scrollbar-color: #b17d82 #ffc7c7;
 }
 
 .card__article {
@@ -155,6 +153,7 @@ h3{
   margin-inline: auto;
   opacity: 0;
   transition: opacity 1s 1s;
+  z-index: 3;
 }
 
 .card__description {
