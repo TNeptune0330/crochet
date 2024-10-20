@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+*{
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
   --first-color: hsl(82, 60%, 28%);
@@ -82,8 +89,8 @@ h3{
 .gray { background-color: gray; }
 .black { background-color: black; }
 .white {
-  height: 8px;
-  width: 8px;
+  height: 18px;
+  width: 18px;
   outline: 2px solid black;
   background-color: white;
 }
@@ -98,6 +105,11 @@ h3{
   height: 17vh;
   outline: solid 1vh #645b6a;
   margin-bottom: 4vh;
+}
+
+.cart{
+  background-color: #e3a4a3;
+  height: 100vh;
 }
 
 .container {
@@ -197,6 +209,69 @@ h3{
 
 .card__article:not(:hover) .card__data {
   animation: remove-data 1s forwards;
+}
+
+input, textarea, button{
+  outline: none;
+  background-color: #B17D82;
+  cursor: #ffc7c7;
+  border: none;
+  font-size: large;
+  font-family:var(--body-font);
+  color: #2f3236;
+}
+
+input{
+  height: 4vh;
+  border-radius: 30px;
+  text-align: center;
+  
+  align-self: center;
+  justify-self: center;
+  min-width: 30vh;
+  width: min-content;
+  padding: 10px;
+  margin: 10px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+  color: #362f3a;
+}
+
+input::-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #B17D82;
+}
+
+textarea {
+  border-radius: 10px;
+  height: 20vh;
+  width: 30vh;
+}
+
+button {
+  border-radius: 10px;
+  height: 3vh;
+  width: 7vh;
+}
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #e3a4a3;
+  align-items: center;
+}
+
+.cart-title{
+  text-align: middle top;
+}
+
+.input-block{
+  display: grid;
 }
 
 /* Card animation */
